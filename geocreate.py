@@ -37,7 +37,7 @@ def newDataset(EPSG, filename, filetype, attrName, attrType):
 # The function adds a point with position and attribute to layer "lr".
 # The function can be repeated as many times as necessary, once for every point.
 # The important thing is that the lists for name and value is of equal lentgh.
-def addPoint(lr, lon, lat, attrName, attrValue:
+def addPoint(lr, lon, lat, attrName, attrValue):
    lD = lr.GetLayerDefn()
    ft = ogr.Feature(lD)
    p = ogr.Geometry(ogr.wkbPoint)
