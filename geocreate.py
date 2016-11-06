@@ -22,7 +22,7 @@ from osgeo import ogr, osr
 # attrName is a list with strings representing the attribute names
 # attrType is a list with ogr.OFTString, ogr.OFTReal, ogr.OFTInteger, or equivalent.
 # The important thing is that attrName and attrType is of equal length.
-# The function returns a "tuple" with a dataset and a layer object (ds, lr = newLayer(...))
+# The function returns a "tuple" with a dataset and a layer object (ds, lr = newDataset(...))
 def newDataset(EPSG, filename, filetype, attrName, attrType):
    gpkgDrv = ogr.GetDriverByName(filetype)
    dS = gpkgDrv.CreateDataSource(filename)
