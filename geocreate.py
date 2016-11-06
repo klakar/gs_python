@@ -29,8 +29,8 @@ def newDataset(EPSG, filename, filetype, attrName, attrType):
    srs = osr.SpatialReference()
    srs.ImportFromEPSG(EPSG)
    lr = dS.CreateLayer(filename, srs, ogr.wkbPoint)
-   for name, typ in zip(attrName, attrType):
-     fD = ogr.FieldDefn(name, type)
+   for a_name, a_type in zip(attrName, attrType):
+     fD = ogr.FieldDefn(a_name, a_type)
      lr.CreateField(fD)
    return(dS, lr)
 
@@ -43,8 +43,8 @@ def addPoint(lr, lon, lat, attrName, attrValue):
    p = ogr.Geometry(ogr.wkbPoint)
    p.AddPoint(lon, lat)
    ft.SetGeometry(p)
-   for name, value in zip(attrName, attrValue):
-     ft.SetField(name, value)
+   for a_name, a_value in zip(attrName, attrValue):
+     ft.SetField(a_name, a_value)
    lr.CreateFeature(ft)
 
 # The function close the dataset "dS"
